@@ -2,9 +2,9 @@ const {ApolloServer, MockList} = require('apollo-server');
 const typeDefs = require('./schema');
 
 const mocks = {
-  Query: {
+  Query: () => ({
     tracksForHome: () => new MockList([6, 9])
-  },
+  }),
   Track: () => ({
     id: () => 'track_01',
     title: () => 'Astro Kitty, Space Explorer',
